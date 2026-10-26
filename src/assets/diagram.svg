@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 120">
+  <rect x="10" y="10" width="280" height="100" rx="12" fill="#dbeafe"/>
+  <circle cx="65" cy="60" r="25" fill="#2563eb"/>
+  <path d="M110 60 H250 M240 50 L250 60 L240 70"
+        stroke="#1d4ed8" stroke-width="4" fill="none"/>
+  <text x="175" y="45" font-size="14" fill="#1e3a8a">Vector</text>
+</svg>

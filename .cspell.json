@@ -1,0 +1,38 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "3Blue1Brown",
+    "Axe",
+    "Bun",
+    "Comlink",
+    "comlink",
+    "D3",
+    "Drei",
+    "drei",
+    "Embla",
+    "Fuse",
+    "GLSL",
+    "GSAP",
+    "Gsap",
+    "gsap",
+    "Jotai",
+    "MDX",
+    "Phosphor",
+    "Playwright",
+    "p5js",
+    "Tailwind",
+    "ThreeJS",
+    "TypeScript",
+    "Vite",
+    "WebGL"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "dist/**",
+    "coverage/**",
+    "playwright-report/**",
+    "test-results/**",
+    "bun.lock"
+  ]
+}
