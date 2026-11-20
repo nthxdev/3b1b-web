@@ -1,31 +1,48 @@
-
 #!/usr/bin/env bash
+set -euo pipefail
 
-set -u
+PROJECT_DIR="$HOME/3b1b-web"
 
-cd ~/3b1b-web || exit 1
+cd "$PROJECT_DIR" || exit 1
 
 print_file() {
     local file="$1"
 
-    echo
-    echo "===== Printing file: $file ====="
+    printf '\n'
+    printf '%s\n' "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    printf 'FILE: %s\n' "$file"
+    printf '\n\n'
 
     if [[ -f "$file" ]]; then
-        cat "$file"
+        cat -- "$file"
     else
-        echo "[FILE NOT FOUND: $file]"
+        printf '[FILE NOT FOUND: %s]\n' "$file"
     fi
 
-    echo
+    printf '\n\n'
 }
 
-# Root configuration
-print_file "vite.config.ts"
+echo "============================================================"
+echo "                 PROJECT SOURCE DUMP"
+echo "============================================================"
+echo "Project: $PROJECT_DIR"
+echo "============================================================"
 
-# All source files
 while IFS= read -r -d '' file; do
     print_file "$file"
-done < <(find src -type f -print0 | sort -z)
+done < <(
+    find . \
+        \( -type d \( \
+            -name dist \
+            -o -name node_modules \
+            -o -name public \
+            -o -name .git \
+        \) -prune \) \
+        -o \
+        \( -type f ! -iname '*.md' -print0 \) |
+    sort -z
+)
 
-echo "===== Finished printing project files ======"
+echo "============================================================"
+echo "              END OF PROJECT SOURCE DUMP"
+echo "============================================================"

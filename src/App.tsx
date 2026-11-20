@@ -1,5 +1,4 @@
 import { Link, Outlet, Route, Routes } from 'react-router'
-
 import LessonPage from './pages/LessonPage'
 import DiagramPage from './pages/DiagramPage'
 import GraphicsLab from './pages/GraphicsLab'
@@ -17,7 +16,6 @@ function Layout() {
           <Link to="/lab">Graphics Lab</Link>
         </nav>
       </header>
-
       <Outlet />
     </>
   )
@@ -27,7 +25,6 @@ function Home() {
   return (
     <main className="mx-auto min-h-screen max-w-5xl p-8">
       <h1 className="mb-6 text-3xl font-bold">3Blue1Brown Web</h1>
-
       <LessonSearch />
     </main>
   )

@@ -1,5 +1,4 @@
 import VectorLesson, { frontmatter } from '../content/lessons/vectors.mdx'
-
 import LessonVideo from '../components/LessonVideo'
 
 export default function LessonPage() {
